@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="tale"
+            type="com.akvelon.grimmuzzle.data.entities.Tale" />
+
+        <variable
+            name="locationImageURL"
+            type="String" />
+
+        <variable
+            name="mainHeroImageURL"
+            type="String" />
+
+        <variable
+            name="minorHero1ImageURL"
+            type="String" />
+
+        <variable
+            name="minorHero2ImageURL"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tale_constraint_layout"
+        android:layout_width="@dimen/tale_card_view_width"
+        android:layout_height="@dimen/tale_card_view_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tale_location_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="10dp"
+            android:foreground="@drawable/location_item_border"
+            app:cardCornerRadius="@dimen/tale_location_card_view_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/tale_location_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                app:url="@{locationImageURL}" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tale_title_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tale_location_card_view"
+            app:layout_constraintEnd_toEndOf="@+id/tale_location_card_view"
+            app:layout_constraintStart_toStartOf="@+id/tale_location_card_view">
+
+            <TextView
+                android:id="@+id/tale_title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF7F7"
+                android:ellipsize="none"
+                android:fontFamily="@font/alegreya"
+                android:forceHasOverlappingRendering="false"
+                android:gravity="center"
+                android:maxLines="2"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:text="@{tale.title}"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="@dimen/tale_title_text_size" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tale_setting_card_view"
+            android:layout_width="@dimen/tale_setting_card_view_width"
+            android:layout_height="@dimen/tale_setting_card_view_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:elevation="10dp"
+            android:foreground="@drawable/character_icon_border"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/tale_setting_card_view_radius"
+            app:layout_constraintEnd_toEndOf="@+id/tale_location_card_view"
+            app:layout_constraintTop_toTopOf="@+id/tale_location_card_view">
+
+            <ImageView
+                android:id="@+id/tale_setting_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="false"
+                android:layout_centerVertical="false"
+                android:layout_gravity="bottom"
+                android:padding="8dp"
+                android:rotation="-90"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_menu_1" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- main hero-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_hero_card_view"
+            android:layout_width="@dimen/main_hero_card_view_width"
+            android:layout_height="@dimen/main_hero_card_view_height"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:foreground="@drawable/character_icon_border"
+            app:cardCornerRadius="@dimen/main_hero_card_view_radius"
+            app:layout_constraintStart_toStartOf="@+id/tale_location_card_view"
+            app:layout_constraintTop_toTopOf="@+id/tale_location_card_view">
+
+            <ImageView
+                android:id="@+id/main_hero_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                app:url="@{mainHeroImageURL}" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- minor hero 1-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/minor_hero_1_card_view"
+            android:layout_width="@dimen/minor_hero_card_view_width"
+            android:layout_height="@dimen/minor_hero_card_view_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:elevation="10dp"
+            android:foreground="@drawable/character_icon_border"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/minor_hero_card_view_radius"
+            app:layout_constraintStart_toStartOf="@+id/main_hero_card_view"
+            app:layout_constraintTop_toTopOf="@+id/main_hero_card_view">
+
+            <ImageView
+                android:id="@+id/minor_hero_1_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                app:url="@{minorHero1ImageURL}" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- minor hero 2-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/minor_hero_2_card_view"
+            android:layout_width="@dimen/minor_hero_card_view_width"
+            android:layout_height="@dimen/minor_hero_card_view_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:elevation="10dp"
+            android:foreground="@drawable/character_icon_border"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/minor_hero_card_view_radius"
+            app:layout_constraintStart_toStartOf="@+id/tale_location_card_view"
+            app:layout_constraintTop_toTopOf="@+id/main_hero_card_view">
+
+            <ImageView
+                android:id="@+id/minor_hero_2_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                app:url="@{minorHero2ImageURL}" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

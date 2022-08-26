@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/tale_card_view_width"
+        android:layout_height="@dimen/tale_card_view_height">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/new_tale_button_big_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="30dp"
+            android:foreground="@drawable/location_item_border"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:cardCornerRadius="@dimen/tale_location_card_view_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/tale_location_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                android:src="@drawable/castle" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/new_tale_button_big_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/new_tale_button_transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/new_tale_button_big_image"
+            app:layout_constraintEnd_toEndOf="@+id/new_tale_button_big_image"
+            app:layout_constraintStart_toStartOf="@+id/new_tale_button_big_image"
+            app:layout_constraintTop_toTopOf="@+id/new_tale_button_big_image">
+
+            <TextView
+                android:id="@+id/new_tale_button_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya"
+                android:shadowColor="#000000"
+                android:shadowDx="10.0"
+                android:shadowDy="10.0"
+                android:shadowRadius="5"
+                android:text="@string/new_tale_button_text"
+                android:textColor="@color/colorOnPrimary"
+                android:textSize="@dimen/new_tale_button_text_size" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

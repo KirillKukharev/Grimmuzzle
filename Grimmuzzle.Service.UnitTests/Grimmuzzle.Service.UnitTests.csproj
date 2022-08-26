@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="Pose" Version="1.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="RepositoryServiceTests\**" />
+    <EmbeddedResource Remove="RepositoryServiceTests\**" />
+    <None Remove="RepositoryServiceTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MLServiceTests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Grimmuzzle.Service\Grimmuzzle.Service.csproj" />
+  </ItemGroup>
+
+</Project>

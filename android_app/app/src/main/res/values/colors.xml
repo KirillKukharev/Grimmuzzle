@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azure">#26C7FA</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange_light">#ffb375</color>
+    <color name="orange">#ffa051</color>
+    <color name="grey_text">#D3D3D3</color>
+    <color name="white_text">@color/colorOnPrimary</color>
+
+    <color name="colorBackground">@color/colorPrimary</color>
+    <color name="colorOnBackground">@color/colorOnPrimary</color>
+
+    <color name="colorPrimary">@color/orange</color>
+    <color name="colorPrimaryVariant">#FF841E</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/orange_light</color>
+    <color name="colorSecondaryVariant">#FF7B0F</color>
+    <color name="colorOnSecondary">@color/white</color>
+    <color name="colorError">#F41125</color>
+    <color name="colorOnError">@color/white</color>
+    <color name="colorSurface">#E7E7E7</color>
+    <color name="colorOnSurface">@color/black</color>
+
+    <color name="saved_tale_card_view_background">@color/white</color>
+    <color name="saved_tale_title_text_color">@color/black</color>
+    <color name="new_tale_button_transparent">#00FFFFFF</color>
+</resources>

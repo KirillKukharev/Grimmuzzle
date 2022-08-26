@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.akvelon.grimmuzzle.ui.screens.readingscreen.ReadingScreenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reading_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        android:textAlignment="center"
+        tools:context=".ui.screens.readingscreen.ReadingScreenFragment">
+
+        <ImageView
+            android:id="@+id/tale_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:url="@{viewmodel.backgroundImageURL}" />
+
+        <ImageView
+            android:id="@+id/arrow_left"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="@dimen/navigation_item_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/textFrame"
+            app:layout_constraintEnd_toStartOf="@+id/textFrame"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textFrame"
+            app:srcCompat="@drawable/arrow" />
+
+        <ImageView
+            android:id="@+id/arrow_back"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="@dimen/navigation_item_height"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_back" />
+
+        <ImageView
+            android:id="@+id/arrow_right"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="@dimen/navigation_item_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:rotation="180"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/textFrame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textFrame"
+            app:layout_constraintTop_toTopOf="@+id/textFrame"
+            app:srcCompat="@drawable/arrow" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/textFrame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="64dp"
+            android:alpha="0.8"
+            android:visibility="invisible"
+            app:cardCornerRadius="@dimen/text_frame_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/arrow_right"
+            app:layout_constraintStart_toEndOf="@+id/arrow_left"
+            app:layout_constraintTop_toTopOf="@+id/tale_image">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tale_text"
+                    style="@style/ReaderTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@{viewmodel.textChunksList[viewmodel.currTextChunkIndex]}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/save_tale"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="@dimen/navigation_item_height"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bookmark" />
+
+        <ImageView
+            android:id="@+id/edit_tale"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/textFrame"
+            app:layout_constraintEnd_toStartOf="@+id/share_tale"
+            app:layout_constraintTop_toTopOf="@+id/reading_constraint_layout"
+            app:srcCompat="@drawable/ic_edit_button" />
+
+        <ImageView
+            android:id="@+id/share_tale"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/textFrame"
+            app:layout_constraintEnd_toStartOf="@+id/save_tale"
+            app:layout_constraintTop_toTopOf="@+id/reading_constraint_layout"
+            app:srcCompat="@drawable/ic_share" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

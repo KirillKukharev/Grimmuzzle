@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Grimmuzzle</string>
+    <string name="base_grimmuzzle_api_url">https://grimmuzzle.azurewebsites.net/api/</string>
+    <string name="toast_empty_tale_content">Couldn\'t generate a story</string>
+    <string name="toast_empty_loaded_tales_list">Loaded tales\' list is empty</string>
+    <string name="toast_empty_input">Enter some text</string>
+    <string name="toast_request_failure">Request was failed</string>
+    <string name="saved_tales_ids">saved_tales_ids</string>
+    <string name="saved_tale_menu_item_edit_title">Edit</string>
+    <string name="saved_tale_menu_item_delete_title">Delete</string>
+    <string name="tale_has_been_saved_text">Tale has been saved</string>
+    <string name="new_tale_button_text">New</string>
+    <string name="tale_has_been_renamed">Tale has been renamed</string>
+    <string name="tales_screen_tab_one_text">My tales</string>
+    <string name="tales_screen_tab_two_text">Shared Tales</string>
+    <string name="saved_tales_toolbar_title">Saved Tales</string>
+    <string name="failed_to_rename">Failed to rename the tale</string>
+    <string name="save_fairytale_as">Save fairytale as</string>
+    <string name="tale_has_been_shared">Tale has been shared</string>
+    <string name="tale_has_not_been_shared">Tale has not been shared</string>
+    <string name="tale_has_been_deleted">Tale has been deleted</string>
+    <string name="error_handler_text">Something went wrong. Please, check your internet connection and try again!</string>
+    <string name="toast_getting_story_from_server_failed">Couldn\'t get story from server. Please, try again later</string>
+</resources>

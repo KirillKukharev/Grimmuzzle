@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "Grimmuzzle.Service.sln",
+    "projects": [
+      "Grimmuzzle.Service\\Grimmuzzle.Service.csproj"
+    ]
+  }
+}

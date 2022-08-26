@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.akvelon.grimmuzzle.ui.screens.creationscreen.CreationScreenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/creation_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ui.screens.creationscreen.CreationScreenFragment">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabs">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@color/new_tale_button_transparent"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/colorOnPrimary"
+            app:tabTextAppearance="@style/TabText"
+            app:tabTextColor="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/arrow_back"
+            android:layout_width="@dimen/navigation_item_width"
+            android:layout_height="@dimen/navigation_item_height"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_back" />
+
+        <ImageView
+            android:id="@+id/go_button"
+            android:layout_width="107dp"
+            android:layout_height="86dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/go_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/mainScreenFragment">
+    <fragment
+        android:id="@+id/creationScreenFragment"
+        android:name="com.akvelon.grimmuzzle.ui.screens.creationscreen.CreationScreenFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/creation_screen_fragment">
+        <action
+            android:id="@+id/action_creationScreenFragment_to_readingScreenFragment"
+            app:destination="@id/readingScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readingScreenFragment"
+        android:name="com.akvelon.grimmuzzle.ui.screens.readingscreen.ReadingScreenFragment"
+        android:label="reading_screen_fragment"
+        tools:layout="@layout/reading_screen_fragment" />
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.akvelon.grimmuzzle.ui.screens.mainscreen.MainScreenFragment"
+        android:label="MainScreenFragment">
+        <action
+            android:id="@+id/action_mainScreenFragment_to_creationScreenFragment"
+            app:destination="@id/creationScreenFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_readingScreenFragment"
+            app:destination="@id/readingScreenFragment" />
+    </fragment>
+</navigation>

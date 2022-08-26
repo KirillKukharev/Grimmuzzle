@@ -1,0 +1,15 @@
+{
+  "items": [
+    "Once upon a time {When} {Who} {What} {Where}.",
+    "It was {When}... {Who} {What} {Where}.",
+    "Now will I tell you a story, where {Who} {What} {Where} {When}."
+  ],
+
+  "items_plural": [
+    "There were once upon a time a {Who} who {What} {Where} {When}."
+  ],
+
+  "items_singular": [
+    "There was once upon a time a {Who} who {What} {Where} {When}."
+  ]
+}
